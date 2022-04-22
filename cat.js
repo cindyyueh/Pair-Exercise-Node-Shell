@@ -4,10 +4,12 @@ const cat = process.stdin.on("data", (data) => {
   const cmd = data.toString().trim().split(" ");
 
   if (cmd[0] === "cat") {
-    process.stdout.write(fs.readFile(cmd[1]), "utf8", function (err, data) {
-      console.log(data);
-    });
+
+  fs.readFile(cmd[1], (err, data) => {
+    if (err) throw err;
+    process.stdout.write(data);
+  });
   }
 });
 
-module.exports = { cat };
+// module.exports = { cat };
