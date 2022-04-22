@@ -17,6 +17,8 @@ require("./pwd");
 
 require("./ls");
 
+require("./cat");
+
 process.stdout.write("prompt > ");
 
 // git testing2
